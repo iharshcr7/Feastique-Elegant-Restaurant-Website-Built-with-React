@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #42200b;
+  --secondary-color: #ffc135;
+  --tertiary-color: #df1c1c;
+  --text-dark: #212529;
+  --white: #ffffff;
+  --about-primary: #FF8C00;
+  --about-secondary: #FFB74D;
+  --about-accent: #FFA726;
+  --about-text: #2C1810;
+  --about-light: #FFF3E0;
+}
+
+/* === Fix: Ensure scroll while maintaining design === */
+html, body, ion-app, ion-page, ion-content {
+  height: 100%;
+}
+
+.about-background {
+  --background: #fff8e1;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.ion-padding {
+  padding: 0 !important;
+  margin: 0;
+  min-height: 100%;
+}
+
+/* === Hero Section === */
+.about-hero-grid {
+  background: linear-gradient(to right, #ffe9b5, #fff0d0);
+  border-radius: 0;
+  margin: 0;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-grid:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-hero-row {
+  position: relative;
+  z-index: 1;
+}
+
+.about-text-col {
+  text-align: left;
+  padding: 1rem 2rem;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  color: #a94e0b;
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 1rem;
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-description {
+  font-size: 1.25rem;
+  color: #444;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.chef-img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  animation: floatIn 2s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Glass Card Variant === */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  height: 100%;
+  padding: 2rem;
+  animation: cardFloat 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.glass-card ion-card-header {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.glass-card ion-card-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.glass-card ion-card-subtitle {
+  font-family: "Montserrat", sans-serif;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.glass-card ion-card-content {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  padding: 0;
+}
+
+@keyframes cardFloat {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Story/Mission Row === */
+.story-mission-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* === Features Section === */
+.features-row {
+  margin: 2rem;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  background: #fffbe6;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: featureCardIn 0.8s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.feature-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.feature-card p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+@keyframes featureCardIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #ff8c00;
+  margin-bottom: 1rem;
+  animation: iconPop 0.5s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes iconPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .story-mission-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .chef-img {
+    max-width: 300px;
+  }
+
+  .about-text-col {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Add stagger effect for feature cards */
+.feature-card:nth-child(1) { animation-delay: 0.2s; }
+.feature-card:nth-child(2) { animation-delay: 0.4s; }
+.feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+.feature-icon:nth-child(1) { animation-delay: 0.4s; }
+.feature-icon:nth-child(2) { animation-delay: 0.6s; }
+.feature-icon:nth-child(3) { animation-delay: 0.8s; }
+
+/* Timeline Section */
+.timeline-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--about-light) 0%, white 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--about-primary);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 2rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.timeline-item.animate {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: 4rem;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: 4rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--about-primary);
+  border-radius: 50%;
+  top: 50%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -44px;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -44px;
+  transform: translateY(-50%);
+}
+
+.timeline-year {
+  font-size: 2.5rem;
+  color: var(--about-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.timeline-text {
+  color: var(--about-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--about-primary), var(--about-secondary));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.stat-card.animate {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff, #f0f0f0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Chefs Section */
+.chefs-section {
+  padding: 6rem 2rem;
+  background: white;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--about-text);
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.chefs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chef-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(50px);
+  opacity: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.chef-card.animate {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+.chef-image-container {
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+.chef-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* Adjust to focus more on face */
+  transition: transform 0.5s ease;
+}
+
+.chef-card:hover .chef-image {
+  transform: scale(1.05);
+}
+
+.chef-info {
+  padding: 2rem;
+  position: relative;
+}
+
+.chef-name {
+  font-size: 1.8rem;
+  color: var(--about-text);
+  margin-bottom: 0.5rem;
+}
+
+.chef-title {
+  color: var(--about-primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.chef-details {
+  margin: 1.5rem 0;
+}
+
+.chef-detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  color: #666;
+}
+
+.chef-detail-icon {
+  margin-right: 0.5rem;
+  color: var(--about-primary);
+}
+
+.chef-awards {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.award-icon {
+  color: #FFD700;
+  margin-right: 0.5rem;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 0;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    left: 0;
+    padding-right: 0;
+    padding-left: 3rem;
+  }
+
+  .timeline-content::before {
+    left: -34px !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chefs-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Animation Delays */
+.stat-card:nth-child(1) { animation-delay: 0.2s; }
+.stat-card:nth-child(2) { animation-delay: 0.3s; }
+.stat-card:nth-child(3) { animation-delay: 0.4s; }
+.stat-card:nth-child(4) { animation-delay: 0.5s; }
+
+.chef-card:nth-child(1) { animation-delay: 0.3s; }
+.chef-card:nth-child(2) { animation-delay: 0.4s; }
+.chef-card:nth-child(3) { animation-delay: 0.5s; }
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.4s; }
+.timeline-item:nth-child(4) { animation-delay: 0.5s; }

@@ -1,0 +1,455 @@
+.welcome-page {
+    --background: #ffffff;
+    font-family: "Josefin Sans", sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Background shapes for visual interest */
+  .background-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+  }
+  
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #e53e3e, #ed8936);
+    top: -100px;
+    right: -100px;
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #e53e3e, #805ad5);
+    bottom: -50px;
+    left: -50px;
+    animation: float 18s ease-in-out infinite reverse;
+  }
+  
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #ed8936, #e53e3e);
+    top: 50%;
+    left: 60%;
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .welcome-container.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .welcome-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .image-container {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .image-glow {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: -10px;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(229, 62, 62, 0.3) 0%, rgba(229, 62, 62, 0) 70%);
+    border-radius: 50%;
+    filter: blur(8px);
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .welcome-image {
+    width: 280px;
+    height: auto;
+    margin-bottom: 30px;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+  }
+  
+  .welcome-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .welcome-right {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .welcome-content {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+  
+  .welcome-title {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(45deg, #e53e3e, #ed8936);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .text-gradient::after {
+    content: "WELCOME!";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(229, 62, 62, 0.3);
+  }
+  
+  .welcome-subtitle {
+    font-size: 18px;
+    color: #718096;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: fadeIn 0.5s ease-out 0.6s both;
+  }
+  
+  .welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .login-button {
+    --background: linear-gradient(45deg, #e53e3e, #ed8936); /* Your existing gradient */
+    --background-activated: linear-gradient(45deg, #c53030, #dd6b20);
+    --background-hover: linear-gradient(45deg, #c53030, #dd6b20);
+    --color: white;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 15px -3px rgba(229, 62, 62, 0.2);
+    height: 54px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    animation: fadeIn 0.5s ease-out 0.9s both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+
+    background: linear-gradient(45deg, #e53e3e, #ed8936); /* This is the background you want */
+    border: none; /* Ensure there's no border */
+    outline: none; /* Remove any outline if present */
+}
+
+.login-button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+  
+  .login-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+  }
+  
+  .login-button:hover {
+    transform: translateY(-3px);
+    --box-shadow: 0 15px 20px -3px rgba(229, 62, 62, 0.3);
+  }
+  
+  .login-button:hover::before {
+    left: 100%;
+  }
+  
+  .login-button.pulse {
+    animation: pulse 1s ease;
+  }
+  
+  .skip-option {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out 1.2s both;
+  }
+  
+  .skip-button {
+    background: transparent;
+    border: none;
+    color: #718096;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .skip-button:hover {
+    color: #e53e3e;
+    background-color: rgba(229, 62, 62, 0.05);
+  }
+  
+  .skip-button ion-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .skip-button:hover ion-icon {
+    transform: translateX(3px);
+  }
+  
+  .welcome-footer {
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out 1.5s both;
+  }
+  
+  .scroll-indicator {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(229, 62, 62, 0.3);
+    border-radius: 15px;
+    margin: 0 auto 10px;
+    position: relative;
+  }
+  
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e53e3e;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollDown 2s ease infinite;
+  }
+  
+  .footer-text {
+    font-size: 12px;
+    color: #a0aec0;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes scrollDown {
+    0% {
+      opacity: 1;
+      top: 8px;
+    }
+    50% {
+      opacity: 1;
+      top: 36px;
+    }
+    60% {
+      opacity: 0;
+      top: 36px;
+    }
+    61% {
+      opacity: 0;
+      top: 8px;
+    }
+    100% {
+      opacity: 1;
+      top: 8px;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (min-height: 700px) {
+    .welcome-container {
+      justify-content: space-between;
+    }
+  
+    .welcome-left {
+      margin-top: 60px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .welcome-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+  
+    .welcome-left {
+      margin-top: 0;
+      margin-right: 40px;
+    }
+  
+    .welcome-footer {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcome-title {
+      font-size: 32px;
+    }
+  
+    .welcome-subtitle {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  
+    .welcome-image {
+      width: 220px;
+    }
+  }
+  
+  /* Keep the existing home styles */
+  .home-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .welcome-message {
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .welcome-message h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #e53e3e;
+  }
+  
+  .welcome-message p {
+    font-size: 18px;
+    color: #718096;
+  }
+  
+  .logout-button {
+    --background: #e53e3e;
+    --background-activated: #c53030;
+    --background-hover: #c53030;
+    --color: white;
+    --border-radius: 8px;
+    --box-shadow: none;
+    margin-top: 20px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@ionic/react": "^7.8.6",
+    "@ionic/react-router": "^7.8.6",
+    "axios": "^1.8.4",
+    "ionicons": "^7.4.0",
+    "react-countup": "^6.5.3",
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^5.3.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2"
+  }
+}

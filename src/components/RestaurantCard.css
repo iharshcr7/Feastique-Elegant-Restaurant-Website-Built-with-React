@@ -1,0 +1,55 @@
+.restaurant-card {
+  margin: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+}
+
+.restaurant-card ion-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-card ion-card-header {
+  padding: 16px;
+}
+
+.restaurant-card ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.restaurant-card ion-card-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ion-color-warning);
+}
+
+.restaurant-card ion-card-content {
+  padding: 16px;
+}
+
+.restaurant-card p {
+  margin: 0 0 12px 0;
+  color: var(--ion-color-medium);
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--ion-color-medium);
+}
+
+.restaurant-info ion-icon {
+  font-size: 1.2rem;
+}
+
+.restaurant-card ion-badge {
+  margin-top: 8px;
+} 

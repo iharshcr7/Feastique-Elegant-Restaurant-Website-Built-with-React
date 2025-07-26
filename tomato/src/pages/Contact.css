@@ -1,0 +1,217 @@
+/* Contact Page General Styles */
+.contact-page {
+  --background: #FFBF00; /* Primary yellow background */
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem; /* More vertical padding */
+}
+
+/* Header Styles */
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+  font-weight: 500;
+  font-family: "Alfa Slab One", serif;
+  color: #42200b; /* Dark brown */
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 2px 2px #ffc135; /* Lighter yellow shadow */
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #42200b;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Left Column: Contact Info Wrapper */
+.contact-info-wrapper {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  padding: 1.5rem; /* Slightly reduce wrapper padding */
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to start */
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem; /* Increased margin between items */
+  padding: 0.8rem 1rem; /* Reduced padding inside items */
+  background: white;
+  border-radius: 10px; /* Slightly smaller radius */
+  transition: all 0.3s ease;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon {
+  font-size: 1.5rem; /* Smaller icon */
+  color: #df1c1c; /* Red accent */
+  margin-right: 1rem; /* Reduced icon margin */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.info-text h3 {
+  font-size: 1rem; /* Smaller heading */
+  color: #42200b;
+  margin: 0 0 0.2rem 0;
+  font-weight: 600;
+}
+
+.info-text p {
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+  font-size: 0.9rem; /* Smaller paragraph text */
+}
+
+/* Right Column: Form Wrapper */
+.contact-form-wrapper {
+  background: white;
+  padding: 2.5rem; /* More padding */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+/* Form Item Styling */
+.form-item {
+  --padding-start: 0; /* Remove default IonItem padding */
+  --inner-padding-end: 0;
+  --border-color: #e0e0e0; /* Lighter border */
+  --highlight-color-focused: #df1c1c; /* Red focus highlight */
+  margin-bottom: 1.5rem;
+  background: transparent; /* Ensure item itself is transparent */
+  --min-height: 60px; /* Ensure enough height */
+}
+
+/* Floating Label Styling */
+.form-item ion-label[position="floating"] {
+  color: #777;
+  font-size: 1rem;
+  font-weight: 500;
+  transform-origin: left top;
+  transition: transform 0.2s ease-out, color 0.2s ease-out, top 0.2s ease-out;
+}
+
+/* Adjust label when floated */
+.item-has-focus ion-label[position="floating"],
+.item-has-value ion-label[position="floating"] {
+  transform: translateY(-10px) scale(0.85);
+  color: #42200b; /* Darker color when floated */
+}
+
+/* Input/Textarea Styling */
+.form-item ion-input,
+.form-item ion-textarea {
+  --color: #333; /* Input text color */
+  --placeholder-color: #aaa;
+  --padding-top: 20px; /* Space above text for floated label */
+  --padding-bottom: 10px; /* Space below text */
+  font-size: 1rem;
+}
+
+.form-item ion-textarea {
+  --padding-top: 22px; /* Slightly more for textarea */
+  min-height: 120px; /* Ensure enough space for rows */
+}
+
+/* Submit Button Styling */
+.submit-button {
+  --background: #df1c1c; /* Red background */
+  --background-hover: #a01515;
+  --background-activated: #8d1313;
+  --color: white;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 10px rgba(223, 28, 28, 0.3);
+  margin-top: 1.5rem;
+  height: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: none;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Animations */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-slide-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+  .contact-header {
+    margin-bottom: 3rem;
+  }
+  .contact-info-wrapper,
+  .contact-form-wrapper {
+    margin-bottom: 2rem;
+    height: auto; /* Allow height to adjust */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .info-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .submit-button {
+    height: 2.75rem;
+  }
+} 

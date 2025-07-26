@@ -1,0 +1,312 @@
+/* Order Page Container */
+.order-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Sriracha', cursive;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 20px;
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: #696969;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav-tab.active {
+  color: #e23744;
+  font-weight: 500;
+}
+
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e23744;
+}
+
+/* Filter Tags */
+.filter-tags {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.filter-tag {
+  padding: 8px 16px;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  background: white;
+  color: #1c1c1c;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tag:hover {
+  background: #f8f8f8;
+}
+
+.filter-tag.active {
+  background: #e23744;
+  color: white;
+  border-color: #e23744;
+}
+
+/* Food Inspiration Section */
+.food-inspiration {
+  margin: 40px 0;
+}
+
+.food-inspiration h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1c1c1c;
+}
+
+/* Scroll Container */
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-button:hover {
+  background: #f8f8f8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-button.prev {
+  left: -20px;
+}
+
+.scroll-button.next {
+  right: -20px;
+}
+
+.scroll-button ion-icon {
+  font-size: 20px;
+  color: #1c1c1c;
+}
+
+/* Update existing scroll sections */
+.inspiration-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  position: relative;
+  width: 100%;
+}
+
+.brand-cards {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  position: relative;
+  width: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.inspiration-cards::-webkit-scrollbar,
+.brand-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.inspiration-card {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.inspiration-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.inspiration-card h3 {
+  font-size: 16px;
+  color: #1c1c1c;
+  margin: 0;
+}
+
+/* Top Brands Section */
+.top-brands {
+  margin: 40px 0;
+}
+
+.top-brands h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1c1c1c;
+}
+
+.brand-card {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.brand-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.brand-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-card:hover .brand-image {
+  transform: scale(1.05);
+}
+
+.brand-card h3 {
+  font-size: 16px;
+  color: #1c1c1c;
+  margin: 0;
+}
+
+.brand-card p {
+  font-size: 14px;
+  color: #696969;
+  margin: 5px 0 0;
+}
+
+/* Restaurant Grid Section */
+.delivery-restaurants {
+  margin: 40px 0;
+}
+
+.delivery-restaurants h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1c1c1c;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-tabs {
+    gap: 15px;
+  }
+
+  .nav-tab {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .inspiration-card,
+  .brand-card {
+    width: 120px;
+  }
+
+  .card-image,
+  .brand-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .scroll-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .scroll-button.prev {
+    left: -16px;
+  }
+
+  .scroll-button.next {
+    right: -16px;
+  }
+
+  .inspiration-cards,
+  .brand-cards {
+    padding: 10px 16px;
+  }
+} 

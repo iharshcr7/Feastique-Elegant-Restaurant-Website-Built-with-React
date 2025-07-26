@@ -1,0 +1,281 @@
+.special-background {
+  --background: #fff8e1;
+}
+
+/* Hero Section */
+.special-hero {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-family: "Alfa Slab One", cursive;
+  margin-bottom: 1rem;
+  animation: slideInDown 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.9;
+  animation: slideInUp 1s ease-out;
+}
+
+/* Featured Dishes Section */
+.featured-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.dish-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: cardFloat 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.dish-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dish-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff3e0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #ff9800;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.dish-tag ion-icon {
+  font-size: 1.2rem;
+}
+
+.dish-card h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.dish-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dish-price {
+  font-size: 1.5rem;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+/* Offers Section */
+.offers-section {
+  background: #fff8e1;
+  padding: 4rem 2rem;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: cardPop 0.8s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.offer-icon {
+  font-size: 2.5rem;
+  color: #ff9800;
+  margin-bottom: 1rem;
+}
+
+.offer-card h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.offer-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.timing {
+  display: inline-block;
+  background: #fff3e0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #ff9800;
+  font-weight: 500;
+}
+
+/* Seasonal Section */
+.seasonal-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.seasonal-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  color: white;
+  animation: slideInUp 1s ease-out;
+}
+
+.seasonal-text h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.seasonal-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.seasonal-highlights {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.seasonal-highlights li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.seasonal-highlights li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFloat {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .special-hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .featured-section,
+  .offers-section,
+  .seasonal-section {
+    padding: 3rem 1rem;
+  }
+
+  .dish-card,
+  .offer-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .seasonal-content {
+    padding: 2rem;
+  }
+}
+
+/* Add stagger effect for cards */
+.dish-card:nth-child(1) { animation-delay: 0.2s; }
+.dish-card:nth-child(2) { animation-delay: 0.4s; }
+.dish-card:nth-child(3) { animation-delay: 0.6s; }
+
+.offer-card:nth-child(1) { animation-delay: 0.3s; }
+.offer-card:nth-child(2) { animation-delay: 0.5s; } 

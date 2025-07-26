@@ -1,0 +1,724 @@
+/* NightClub Page Styles - Simplified */
+
+/* Server status */
+.server-status-banner {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ffeeba;
+}
+
+.server-status-banner ion-icon {
+  font-size: 1.2rem;
+}
+
+/* Basic animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.3s;
+}
+
+/* Hero section */
+.nightclub-hero {
+  height: 60vh;
+  min-height: 300px;
+  background-image: url("/assets/club.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(76, 0, 153, 0.7), rgba(153, 0, 153, 0.7));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-button {
+  --border-radius: 50px;
+  --padding-start: 1.5rem;
+  --padding-end: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 48px;
+}
+
+/* Section */
+.section {
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+/* Section title */
+.section-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #8e44ad;
+  border-radius: 3px;
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+}
+
+/* Quick Nav */
+.quick-nav {
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  background-color: rgba(142, 68, 173, 0.05);
+  border-radius: 10px;
+}
+
+.genre-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.genre-chip {
+  --background: #f5f5f5;
+  --color: #666;
+  font-weight: 500;
+}
+
+.genre-chip.active {
+  --background: #8e44ad;
+  --color: #fff;
+}
+
+/* Event Cards */
+.event-card {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(142, 68, 173, 0.2);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  --background: #8e44ad;
+  --color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.event-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.subtitle-icon {
+  font-size: 1rem;
+  margin-right: 0.1rem;
+}
+
+.subtitle-divider {
+  margin: 0 0.4rem;
+}
+
+.event-description {
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.event-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.event-details-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: #8e44ad;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.event-expanded-details {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.expanded-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #555;
+}
+
+.detail-value {
+  color: #666;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+.rating-text {
+  font-weight: 600;
+  color: #8e44ad;
+}
+
+.social-share {
+  margin-top: 0.5rem;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: #666;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: none;
+  color: #ff4081;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.1);
+  background: #ffebf1;
+}
+
+.book-ticket-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  flex: 1;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-ticket-button:hover {
+  background: #7c3a9a;
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+}
+
+.no-results ion-icon {
+  font-size: 3rem;
+  color: #8e44ad;
+  margin-bottom: 1rem;
+}
+
+/* Loading skeletons */
+.skeleton-image {
+  height: 200px;
+}
+
+/* Modal styles */
+.booking-form-container {
+  padding: 1rem;
+}
+
+.booking-event-details {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.booking-event-details h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.event-date-time {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #666;
+}
+
+.detail-separator {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+.form-item {
+  margin-bottom: 1rem;
+  --highlight-color-focused: #8e44ad;
+}
+
+.quantity-selector {
+  margin: 1.5rem 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 30px;
+  text-align: center;
+}
+
+.price-summary {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+  margin-top: 0.5rem;
+}
+
+.terms-item {
+  margin: 1rem 0;
+}
+
+.booking-submit-button {
+  margin: 1rem 0;
+  --border-radius: 50px;
+  --background: #8e44ad;
+  height: 48px;
+  font-weight: 600;
+}
+
+.booking-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .event-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nightclub-hero {
+    height: 50vh;
+  }
+  
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+  
+  .genre-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.8rem;
+  }
+  
+  .event-card {
+    margin-bottom: 0.8rem;
+  }
+  
+  .event-title {
+    font-size: 1.1rem;
+  }
+  
+  .event-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .booking-event-details h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* VIP Section styles */
+.vip-card {
+  box-shadow: 0 8px 24px rgba(142, 68, 173, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(142, 68, 173, 0.25);
+}
+
+.vip-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.vip-price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #8e44ad;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-top-left-radius: 12px;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popularity-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 193, 7, 0.9);
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.vip-title {
+  font-size: 1.5rem;
+  color: #422511;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.vip-subtitle {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #666;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.subtitle-icon {
+  color: #8e44ad;
+  font-size: 1.2rem;
+}
+
+.vip-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.vip-rating .rating-text {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.vip-details-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  color: #8e44ad;
+  font-weight: 600;
+  cursor: pointer;
+  border-top: 1px dashed rgba(142, 68, 173, 0.3);
+  border-bottom: 1px dashed rgba(142, 68, 173, 0.3);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  background: none;
+  border-left: 0;
+  border-right: 0;
+}
+
+.vip-details-toggle:hover {
+  color: #7d3c98;
+  background-color: rgba(142, 68, 173, 0.05);
+}
+
+.vip-benefits {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vip-benefits h4 {
+  color: #422511;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.vip-benefits ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.vip-benefits li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.vip-benefits li ion-icon {
+  color: #4caf50;
+  font-size: 1.2rem;
+  min-width: 1.2rem;
+}
+
+.book-vip-button {
+  --background: #8e44ad;
+  --background-hover: #7d3c98;
+  --color: #fff;
+  --border-radius: 12px;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(142, 68, 173, 0.3);
+  transition: all 0.3s ease;
+}
+
+.book-vip-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(142, 68, 173, 0.4);
+}
+
+.book-vip-button ion-icon {
+  margin-right: 0.5rem;
+}
+
+/* VIP booking form styles */
+.booking-vip-details {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.booking-vip-details h2 {
+  color: #8e44ad;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.vip-capacity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: #666;
+}
+
+.vip-price-display {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8e44ad;
+  margin-top: 0.5rem;
+}
+
+/* Media queries for VIP section */
+@media (max-width: 768px) {
+  .vip-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vip-image {
+    height: 150px;
+  }
+  
+  .vip-price {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .popularity-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,28 @@
+@keyframes stroke-animation {
+	0% { stroke-dasharray: 500; stroke-dashoffset: 500; opacity: 0; }
+	50% { opacity: 1; }
+	100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  
+  @keyframes fill-animation {
+	0% { fill: transparent; }
+	100% { fill: black; }
+  }
+  
+  .animated-logo text {
+	stroke-dasharray: 500;
+	stroke-dashoffset: 500;
+	animation: stroke-animation 4s ease forwards, fill-animation 2s ease-in 4s forwards;
+  }
+  
+  .animated-logo path {
+	stroke-dasharray: 530;
+	stroke-dashoffset: 530;
+	animation: dash 5s linear infinite alternate;
+  }
+  
+  @keyframes dash {
+	from { stroke-dashoffset: 530; }
+	to { stroke-dashoffset: 0; }
+  }
+  

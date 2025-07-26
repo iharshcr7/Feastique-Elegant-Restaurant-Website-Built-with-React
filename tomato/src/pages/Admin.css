@@ -1,0 +1,111 @@
+.admin-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.admin-container h2 {
+  color: var(--ion-color-dark);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.order-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-header h3 {
+  margin: 0;
+  color: var(--ion-color-dark);
+  font-size: 18px;
+}
+
+.order-details {
+  margin-bottom: 16px;
+}
+
+.order-details p {
+  margin: 8px 0;
+  color: var(--ion-color-medium);
+}
+
+.order-items {
+  margin-bottom: 16px;
+}
+
+.order-items h4 {
+  color: var(--ion-color-dark);
+  margin-bottom: 8px;
+}
+
+.item-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ion-color-light);
+}
+
+.item-detail:last-child {
+  border-bottom: none;
+}
+
+.order-actions {
+  margin-top: 16px;
+}
+
+ion-select {
+  width: 100%;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 8px;
+}
+
+/* Status badge colors */
+ion-badge[color="warning"] {
+  background: #ffc409;
+  color: #000;
+}
+
+ion-badge[color="primary"] {
+  background: #3880ff;
+  color: #fff;
+}
+
+ion-badge[color="secondary"] {
+  background: #3dc2ff;
+  color: #fff;
+}
+
+ion-badge[color="tertiary"] {
+  background: #5260ff;
+  color: #fff;
+}
+
+ion-badge[color="success"] {
+  background: #2dd36f;
+  color: #fff;
+}
+
+ion-badge[color="danger"] {
+  background: #eb445a;
+  color: #fff;
+}
+
+/* Loading state */
+.admin-container p {
+  text-align: center;
+  color: var(--ion-color-medium);
+  font-size: 16px;
+  margin: 20px 0;
+} 

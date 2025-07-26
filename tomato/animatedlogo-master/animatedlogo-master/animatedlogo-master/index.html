@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feastique Logo Animation</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        @keyframes stroke-animation {
+            0% { stroke-dasharray: 500; stroke-dashoffset: 500; opacity: 0; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        text {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: stroke-animation 4s ease forwards;
+        }
+        @keyframes fill-animation {
+            0% { fill: transparent; }
+            100% { fill: black; }
+        }
+        text {
+            animation: stroke-animation 4s ease forwards, fill-animation 2s ease-in 4s forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="col-md-6 col-md-offset-3">
+        <svg id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 666.6 152.3" enable-background="new 0 0 666.6 152.3" xml:space="preserve">
+            <path fill="none" stroke="#000" stroke-width="2" d="M50,100 H600" />
+            <text x="50" y="100" font-size="80" font-family="Arial, sans-serif" fill="none" stroke="#000" stroke-width="2">FEASTIQUE</text>
+        </svg>
+    </div>
+</body>
+</html>

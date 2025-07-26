@@ -1,0 +1,356 @@
+.order-summary {
+  margin: 20px;
+  margin-bottom: 24px;  /* Increased bottom margin */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border: 1px solid rgba(255, 183, 0, 0.1);
+}
+
+.order-summary h2 {
+  font-size: 18px;
+  color: #1f1f1f;
+  margin-bottom: 4px;
+}
+
+.order-summary .quantity {
+  color: #666;
+  font-size: 14px;
+}
+
+.payment-card {
+  margin: 0 20px;  /* Remove bottom margin */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  padding-bottom: 16px;  /* Add padding at bottom */
+  border: 1px solid rgba(255, 183, 0, 0.1);
+}
+
+.payment-card h2 {
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px;  /* Add horizontal padding */
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-option:hover {
+  border-color: #ffb700;
+  background-color: #fffaf0;
+}
+
+.payment-option.selected {
+  border-color: #ffb700;
+  background-color: #fffaf0;
+  box-shadow: 0 4px 12px rgba(255, 183, 0, 0.12);
+}
+
+.payment-option-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.payment-icon {
+  font-size: 20px;
+  color: #3880ff;
+  background: #f0f4ff;
+  padding: 12px;
+  border-radius: 10px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-details {
+  flex: 1;
+}
+
+.payment-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.payment-details p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.cod-checkbox {
+  --background: #f8f9fa;
+  --background-checked: #2ecc71;
+  --border-color: #2ecc71;
+  --border-color-checked: #2ecc71;
+  --checkmark-color: white;
+  --size: 20px;
+  margin-right: 10px;
+}
+
+.payment-note {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  padding-left: 30px;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 16px;
+  margin-bottom: 8px;
+  --background: transparent;
+}
+
+.item-total {
+  text-align: right;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.bill-summary {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #666;
+}
+
+.bill-row.total {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00b14f;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Add main content wrapper */
+.order-cart-content {
+  padding-bottom: 90px;
+  background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+  min-height: 100%;
+}
+
+/* Fixed bottom button container */
+.place-order-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.place-order-btn {
+  margin: 0;
+  width: 100%;
+  --background: linear-gradient(135deg, #ffb700 0%, #ffcc00 100%);
+  --color: #000000;
+  --background-hover: linear-gradient(135deg, #ffcc00 0%, #ffd700 100%);
+  --background-activated: linear-gradient(135deg, #ffcc00 0%, #ffd700 100%);
+  --background-disabled: #f5f5f5;
+  --color-disabled: #999;
+  font-weight: 600;
+  height: 56px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 183, 0, 0.2);
+}
+
+.place-order-btn:hover {
+  --background: linear-gradient(135deg, #ffcc00 0%, #ffd700 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 183, 0, 0.25);
+}
+
+.place-order-btn::part(native) {
+  padding: 0;
+  width: 100%;
+}
+
+/* Style the radio button */
+ion-radio {
+  --color: #d1d1d1;
+  --color-checked: #ffb700;
+  width: 22px;
+  height: 22px;
+  margin-left: 16px;
+}
+
+ion-radio::part(container) {
+  border-radius: 50%;
+  border: 2px solid #d1d1d1;
+}
+
+ion-radio.radio-checked::part(container) {
+  border-color: #ffb700;
+}
+
+ion-radio::part(mark) {
+  background: #ffb700;
+  transition: all 0.2s ease;
+}
+
+/* Make the entire payment option clickable */
+ion-radio-group {
+  width: 100%;
+}
+
+/* Address Card Styles */
+.address-card {
+  margin: 0 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  padding-bottom: 16px;
+  border: 1px solid rgba(255, 183, 0, 0.1);
+}
+
+.address-card h2 {
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.saved-address {
+  padding: 0 20px;
+}
+
+.saved-address p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.saved-address strong {
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.add-address-btn {
+  --background: #2ecc71;
+  --background-hover: #27ae60;
+  --background-activated: #27ae60;
+  margin: 0 20px;
+  height: 48px;
+  font-weight: 600;
+}
+
+/* Address Side Menu Styles */
+.address-side-menu {
+  --width: 100%;
+  --height: 100%;
+  --border-radius: 0;
+  --box-shadow: none;
+}
+
+.address-modal-content {
+  --background: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.address-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+
+.address-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.address-modal-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.address-input {
+  margin-bottom: 16px;
+  --background: #f8f9fa;
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+}
+
+.address-modal-buttons {
+  margin-top: 24px;
+  padding-bottom: 20px;
+}
+
+.save-address-btn {
+  --background: #2ecc71;
+  --background-hover: #27ae60;
+  --background-activated: #27ae60;
+  height: 48px;
+  font-weight: 600;
+}
+
+.error-card {
+  margin: 16px;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+}
+
+.error-message {
+  color: #c62828;
+  margin: 0;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+} 

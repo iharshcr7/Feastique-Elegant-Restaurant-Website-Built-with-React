@@ -1,0 +1,364 @@
+.splash-page {
+  --background: #e23744;
+  position: relative;
+  overflow: hidden;
+}
+
+.splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.splash-logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+.logo-text {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  color: #fff;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-out, glow 2s ease-in-out infinite;
+}
+
+.tagline {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 1s forwards;
+}
+
+/* Plate styling */
+.plate {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.plate-inner {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #e9ecef;
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+}
+
+.plate-highlight {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  top: 30px;
+  left: 30px;
+  transform: rotate(-30deg);
+}
+
+/* Food items */
+.food-items {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.food-item {
+  position: absolute;
+  opacity: 0;
+  animation: foodAppear 10s infinite;
+}
+
+.burger {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.burger-bun-top {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background: #f4a261;
+  border-radius: 50px 50px 20px 20px;
+  top: 0;
+}
+
+.burger-patty {
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  background: #6d4c41;
+  border-radius: 5px;
+  top: 25px;
+  left: 2.5px;
+}
+
+.burger-lettuce {
+  position: absolute;
+  width: 85px;
+  height: 10px;
+  background: #81c784;
+  border-radius: 5px;
+  top: 40px;
+  left: -2.5px;
+  z-index: 1;
+}
+
+.burger-bun-bottom {
+  position: absolute;
+  width: 80px;
+  height: 25px;
+  background: #f4a261;
+  border-radius: 20px 20px 50px 50px;
+  top: 45px;
+}
+
+.pizza {
+  width: 90px;
+  height: 90px;
+  background: #ffb74d;
+  border-radius: 50%;
+  animation-delay: 3.33s;
+  overflow: hidden;
+}
+
+.pizza::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #e53935;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  box-shadow: 30px 10px 0 #e53935, 50px 30px 0 #e53935, 15px 50px 0 #e53935, 40px 55px 0 #e53935;
+}
+
+.sushi {
+  width: 80px;
+  height: 60px;
+  background: #fff;
+  border-radius: 30px;
+  animation-delay: 6.66s;
+  overflow: hidden;
+}
+
+.sushi::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  background: #f44336;
+  top: 20px;
+}
+
+.sushi::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 10px;
+  background: #212121;
+  bottom: 0;
+}
+
+/* Utensils */
+.utensils {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  bottom: -60px;
+  display: flex;
+  justify-content: space-between;
+  animation: utensils-appear 1s ease-out 1.5s forwards;
+  opacity: 0;
+}
+
+.fork,
+.knife {
+  position: relative;
+  height: 120px;
+  width: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.fork {
+  transform: rotate(-25deg);
+}
+
+.fork::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-left: 10px solid #e0e0e0;
+  border-right: 10px solid #e0e0e0;
+  border-top: 10px solid #e0e0e0;
+  box-sizing: border-box;
+  top: 0;
+  left: -15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.knife {
+  transform: rotate(25deg);
+}
+
+.knife::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  background: #e0e0e0;
+  top: 0;
+  left: -25px;
+  border-radius: 15px 0 0 0;
+}
+
+/* Steam animation */
+.steam-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.steam {
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  background: rgba(255, 0, 0, 0.4);
+  border-radius: 10px;
+  animation: steam 3s infinite ease-out;
+  opacity: 0;
+}
+
+.steam1 {
+  left: -30px;
+  animation-delay: 0.2s;
+}
+
+.steam2 {
+  left: -10px;
+  animation-delay: 0.6s;
+}
+
+.steam3 {
+  left: 10px;
+  animation-delay: 1s;
+}
+
+.steam4 {
+  left: 30px;
+  animation-delay: 1.4s;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes foodAppear {
+  0%,
+  30% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+  33%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@keyframes utensils-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.5);
+  }
+}
+

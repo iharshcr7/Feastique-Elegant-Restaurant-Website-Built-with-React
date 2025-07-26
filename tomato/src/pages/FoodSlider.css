@@ -1,0 +1,211 @@
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 30px 10px;
+    margin: 20px auto;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .slider-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: "Sriracha", cursive;
+    position: relative;
+  }
+  
+  .slider-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #e23744;
+    border-radius: 3px;
+  }
+  
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .slider-progress {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .progress-dot.active {
+    background-color: #e23744;
+    transform: scale(1.2);
+  }
+  
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+  
+  .item {
+    flex-shrink: 0;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .item-inner {
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item.active .item-inner {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 2px solid #e23744;
+  }
+  
+  .img-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .item:hover .img-container {
+    transform: scale(1.05);
+  }
+  
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .item p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 10px 0 0;
+    font-family: "Sriracha", cursive;
+    transition: color 0.3s ease;
+  }
+  
+  .item.active p {
+    color: #e23744;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    background: white !important;
+    color: #333 !important;
+    border: 1px solid #eee !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    --padding-start: 0 !important;
+    --padding-end: 0 !important;
+  }
+  
+  .arrow:hover {
+    background: #f8f8f8 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px);
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .slider-container {
+      padding: 20px 5px;
+    }
+  
+    .slider-title {
+      font-size: 24px;
+    }
+  
+    .img-container {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .item p {
+      font-size: 16px;
+    }
+  
+    .arrow {
+      width: 36px !important;
+      height: 36px !important;
+    }
+  
+    .arrow-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  /* Animation for items entering the view */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .item {
+    animation: fadeInScale 0.5s ease forwards;
+  }
+  
+  

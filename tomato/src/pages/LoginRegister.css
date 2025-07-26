@@ -1,0 +1,124 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.switch-form {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.switch-form a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+} 

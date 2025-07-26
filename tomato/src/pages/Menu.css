@@ -1,0 +1,588 @@
+:root {
+  --menu-primary: #FF8C00;
+  --menu-secondary: #FFB74D;
+  --menu-accent: #FFA726;
+  --menu-text: #2C1810;
+  --menu-light: #FFF3E0;
+}
+
+.menu-background {
+  background-color: var(--menu-light);
+  background-image: url('/assets/farm-pattern.png');
+  background-blend-mode: overlay;
+  background-size: 200px;
+  background-repeat: repeat;
+  position: relative;
+}
+
+/* Hero Section */
+.menu-hero {
+  background: linear-gradient(135deg, var(--menu-primary), var(--menu-secondary));
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/assets/farm-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.menu-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 140, 0, 0.7);
+  z-index: 1;
+}
+
+.menu-hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  animation: slideInDown 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-subtitle {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 3rem 1rem;
+  background: white;
+  position: relative;
+  margin-top: -50px;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.category-card {
+  background: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(255, 140, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  color: var(--menu-primary);
+  margin-bottom: 1rem;
+}
+
+/* Menu Items Section */
+.menu-items-section {
+  padding: 3rem 1rem;
+  background: var(--menu-light);
+}
+
+.menu-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  color: var(--menu-text);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--menu-primary);
+  border-radius: 2px;
+}
+
+.menu-item-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--menu-primary);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.15);
+}
+
+.menu-item-card:hover::before {
+  transform: scaleY(1);
+}
+
+.item-content h3 {
+  color: var(--menu-text);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  color: var(--menu-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.order-button {
+  --background: var(--menu-primary);
+  --color: white;
+  --border-radius: 25px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.order-button:hover {
+  --background: var(--menu-secondary);
+  transform: scale(1.05);
+}
+
+/* Dietary Section */
+.dietary-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, var(--ion-color-light) 0%, rgba(var(--ion-color-light-rgb), 0.8) 100%);
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dietary-section .section-title {
+  font-size: 2.5rem;
+  color: var(--ion-color-dark);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.dietary-section .section-subtitle {
+  text-align: center;
+  color: var(--ion-color-medium);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.dietary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.dietary-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dietary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dietary-icon-wrapper {
+  background: var(--ion-color-primary-tint);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.dietary-card:hover .dietary-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.dietary-icon {
+  font-size: 2rem;
+  color: var(--ion-color-primary);
+}
+
+.dietary-content {
+  flex: 1;
+}
+
+.dietary-content h3 {
+  color: var(--ion-color-dark);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.dietary-content p {
+  color: var(--ion-color-medium);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.dietary-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.dietary-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(var(--ion-color-primary-rgb), 0.05);
+  border-radius: 15px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.dietary-note {
+  color: var(--ion-color-medium);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.custom-menu-btn {
+  --padding-start: 2rem;
+  --padding-end: 2rem;
+  --border-radius: 25px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add stagger effect for cards */
+.category-card:nth-child(1) { animation-delay: 0.2s; }
+.category-card:nth-child(2) { animation-delay: 0.3s; }
+.category-card:nth-child(3) { animation-delay: 0.4s; }
+.category-card:nth-child(4) { animation-delay: 0.5s; }
+.category-card:nth-child(5) { animation-delay: 0.6s; }
+.category-card:nth-child(6) { animation-delay: 0.7s; }
+
+.menu-item-card:nth-child(1) { animation-delay: 0.2s; }
+.menu-item-card:nth-child(2) { animation-delay: 0.3s; }
+.menu-item-card:nth-child(3) { animation-delay: 0.4s; }
+
+.dietary-card:nth-child(1) { animation-delay: 0.2s; }
+.dietary-card:nth-child(2) { animation-delay: 0.3s; }
+.dietary-card:nth-child(3) { animation-delay: 0.4s; }
+.dietary-card:nth-child(4) { animation-delay: 0.5s; }
+
+/* Chef's Corner & Specialties Section */
+.chefs-corner-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--menu-light) 0%, white 100%);
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.chefs-corner-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: var(--menu-primary);
+  opacity: 0.05;
+  border-radius: 50%;
+  transform: translate(150px, -150px);
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.specialty-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(var(--menu-primary-rgb), 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--menu-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(var(--menu-primary-rgb), 0.15);
+}
+
+.specialty-card:hover::after {
+  transform: scaleX(1);
+}
+
+.specialty-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.specialty-icon-wrapper {
+  background: linear-gradient(135deg, var(--menu-primary), var(--menu-secondary));
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.specialty-card:hover .specialty-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.specialty-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.specialty-badge {
+  --background: var(--menu-primary);
+  --color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.specialty-content {
+  flex: 1;
+}
+
+.specialty-content h3 {
+  color: var(--menu-text);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.specialty-content p {
+  color: var(--ion-color-medium);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.specialty-price {
+  color: var(--menu-primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.reserve-button {
+  --background: var(--menu-primary);
+  --color: white;
+  --border-radius: 25px;
+  margin-top: auto;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.reserve-button:hover {
+  --background: var(--menu-secondary);
+  transform: scale(1.02);
+}
+
+.specialties-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(var(--menu-primary-rgb), 0.05) 0%, rgba(var(--menu-secondary-rgb), 0.05) 100%);
+  border-radius: 20px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.cta-content {
+  margin-bottom: 2rem;
+}
+
+.cta-content h3 {
+  color: var(--menu-text);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cta-content p {
+  color: var(--ion-color-medium);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Add stagger effect for specialty cards */
+.specialty-card:nth-child(1) { animation-delay: 0.2s; }
+.specialty-card:nth-child(2) { animation-delay: 0.3s; }
+.specialty-card:nth-child(3) { animation-delay: 0.4s; }
+.specialty-card:nth-child(4) { animation-delay: 0.5s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 2.5rem;
+  }
+
+  .menu-hero {
+    padding: 4rem 1rem;
+  }
+
+  .categories-section {
+    margin-top: -30px;
+  }
+
+  .category-card {
+    margin-bottom: 1rem;
+  }
+
+  .chefs-corner-section {
+    padding: 3rem 1rem;
+    margin: 1rem;
+  }
+
+  .specialty-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .specialty-price {
+    font-size: 1.2rem;
+  }
+
+  .cta-content h3 {
+    font-size: 1.6rem;
+  }
+} 
